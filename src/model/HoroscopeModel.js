@@ -1,6 +1,7 @@
 getZodiacSign(dateStr) {
   const [day, month] = dateStr.split('-').map(Number);
 
+  if ((month === 1 && day >= 1 && day <= 19)) return 'Capricornio';
   if ((month === 1 && day >= 20) || (month === 2 && day <= 18)) return 'Acuario';
   if ((month === 2 && day >= 19) || (month === 3 && day <= 20)) return 'Piscis';
   if ((month === 3 && day >= 21) || (month === 4 && day <= 19)) return 'Aries';
@@ -12,9 +13,7 @@ getZodiacSign(dateStr) {
   if ((month === 9 && day >= 23) || (month === 10 && day <= 22)) return 'Libra';
   if ((month === 10 && day >= 23) || (month === 11 && day <= 21)) return 'Escorpio';
   if ((month === 11 && day >= 22) || (month === 12 && day <= 21)) return 'Sagitario';
-  if ((month === 12 && day >= 22) || (month === 1 && day <= 19)) return 'Capricornio';
+  if ((month === 12 && day >= 22 && day <= 31)) return 'Capricornio';
 
   return 'Desconocido';
 }
-
-
