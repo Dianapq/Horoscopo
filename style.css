@@ -8,6 +8,13 @@ body {
   min-height: 100vh;
 }
 
+#app {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+
 h1 {
   font-size: 2.5rem;
   margin-bottom: 30px;
