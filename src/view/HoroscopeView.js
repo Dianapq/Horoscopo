@@ -5,12 +5,13 @@ export default class HoroscopeView {
     this.messageBox = document.getElementById('horoscopeMessage');
   }
 
-  bindDateInput(callback) {
-    this.input.addEventListener('input', () => {
-      const isValid = /^\d{2}-\d{2}-\d{4}$/.test(this.input.value);
-      callback(isValid);
-    });
-  }
+ bindDateInput(callback) {
+  this.input.addEventListener('input', () => {
+    const trimmed = this.input.value.trim();
+    const isValid = /^\d{2}-\d{2}-\d{4}$/.test(trimmed);
+    callback(isValid);
+  });
+}
 
   bindConsult(callback) {
     this.button.addEventListener('click', callback);
