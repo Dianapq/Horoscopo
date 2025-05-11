@@ -1,11 +1,9 @@
+// Dentro de HoroscopeModel.js
+
 export default class HoroscopeModel {
-  // Determina el signo zodiacal basado en la fecha ingresada (DD-MM-AAAA)
   getZodiacSign(dateStr) {
     const [day, month] = dateStr.split('-').map(Number);
-
-    // Validación básica
     if (!day || !month || day > 31 || month > 12) return 'Desconocido';
-
     if ((month === 1 && day >= 20) || (month === 2 && day <= 18)) return 'Acuario';
     if ((month === 2 && day >= 19) || (month === 3 && day <= 20)) return 'Piscis';
     if ((month === 3 && day >= 21) || (month === 4 && day <= 19)) return 'Aries';
@@ -18,46 +16,27 @@ export default class HoroscopeModel {
     if ((month === 10 && day >= 23) || (month === 11 && day <= 21)) return 'Escorpio';
     if ((month === 11 && day >= 22) || (month === 12 && day <= 21)) return 'Sagitario';
     if ((month === 12 && day >= 22) || (month === 1 && day <= 19)) return 'Capricornio';
-
     return 'Desconocido';
   }
 
-  // Llama al servicio para obtener el horóscopo del día
   async fetchHoroscope(sign) {
-    return HoroscopeService.getDailyHoroscope(sign);
-  }
-}
-
-// Servicio integrado directamente al modelo
-export default class HoroscopeService {
-  static getDailyHoroscope(sign) {
     const emojis = {
-      Aries: "♈",
-      Tauro: "♉",
-      Géminis: "♊",
-      Cáncer: "♋",
-      Leo: " ♌",
-      Virgo: "♍",
-      Libra: "♎",
-      Escorpio: "♏",
-      Sagitario: "♐",
-      Capricornio: "♑",
-      Acuario: "♒",
-      Piscis: "♓"
+      Aries: "♈", Tauro: "♉", Géminis: "♊", Cáncer: "♋", Leo: "♌", Virgo: "♍",
+      Libra: "♎", Escorpio: "♏", Sagitario: "♐", Capricornio: "♑", Acuario: "♒", Piscis: "♓"
     };
 
     const messages = {
       Aries: "Toma la iniciativa hoy. No temas dar el primer paso.",
       Tauro: "La estabilidad te rodea. Disfruta los pequeños placeres.",
-      Géminis: "Comunica tus ideas con claridad y veras buenos resultados.",
-      Cáncer: "Escucha a tu intuición. Hoy es buen dia para conectar con otros.",
+      Géminis: "Comunica tus ideas con claridad y verás buenos resultados.",
+      Cáncer: "Escucha a tu intuición. Hoy es buen día para conectar con otros.",
       Leo: "Brilla con fuerza, pero no opaques a quienes te rodean.",
       Virgo: "Organiza tus ideas. El orden será tu mejor aliado.",
       Libra: "Busca el equilibrio, incluso en situaciones difíciles.",
-      Escorpio: "Tu intensidad puede inspirar. Usala con sabiduria.",
-      Sagitario: "Explora nuevas ideas o lugares, tu mente lo agradecera.",
-      Capricornio: "Tu disciplina sera recompensada. No te detengas.",
-      Acuario: "Sé original. Tu vision puede cambiar realidades.",
+      Escorpio: "Tu intensidad puede inspirar. Úsala con sabiduría.",
+      Sagitario: "Explora nuevas ideas o lugares, tu mente lo agradecerá.",
+      Capricornio: "Tu disciplina será recompensada. No te detengas.",
+      Acuario: "Sé original. Tu visión puede cambiar realidades.",
       Piscis: "Conecta con tus emociones, pero no te dejes arrastrar por ellas."
     };
 
