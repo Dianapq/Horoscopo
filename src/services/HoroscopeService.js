@@ -1,18 +1,18 @@
 export default class HoroscopeService {
   static getDailyHoroscope(sign) {
     const emojis = {
-      Aries: "🔥",
-      Tauro: "🐂",
-      Géminis: "👯",
-      Cáncer: "🦀",
-      Leo: "🦁",
-      Virgo: "🌾",
-      Libra: "⚖️",
-      Escorpio: "🦂",
-      Sagitario: "🏹",
-      Capricornio: "🐐",
-      Acuario: "🌊",
-      Piscis: "🐟"
+      Aries: "♈",
+      Tauro: "♉",
+      Géminis: "♊",
+      Cáncer: "♋",
+      Leo: " ♌",
+      Virgo: "♍",
+      Libra: "♎",
+      Escorpio: "♏",
+      Sagitario: "♐",
+      Capricornio: "♑",
+      Acuario: "♒",
+      Piscis: "♓"
     };
 
     const messages = {
